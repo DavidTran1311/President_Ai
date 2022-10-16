@@ -20,7 +20,7 @@ public class Memory : MonoBehaviour
        
         instance = this;
 
-        cards = transform.GetComponentInChildren<cards>();
+       // cards = transform.GetComponentInChildren<cards>();
         int n = 0;
        
        // Shuffle(Cards);
@@ -30,14 +30,14 @@ public class Memory : MonoBehaviour
             string suit = GetRandomFromArray(KCardSuits);
             string rank = GetRandomFromArray(KCardRanks);
 
-            cards[n++].SetSuitAndRank(suit, rank);
-            cards[n++].SetSuitAndRank(suit, rank);
+           // cards[n++].SetSuitAndRank(suit, rank);
+            //cards[n++].SetSuitAndRank(suit, rank);
 
         }
 
     }
 
-    private void Shuffle<T>(T[] array) {
+    private void Shuffle<T>(T[] array) { 
 
         int n = array.Length;
         while (n > 1) {
