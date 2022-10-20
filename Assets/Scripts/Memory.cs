@@ -6,6 +6,7 @@ public class Memory : MonoBehaviour
 {
     public static string[] Suits = new string[] { "Club", "Diamond", "Spades", "Heart" };
     public static string[] Ranks = new string[] { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
+    public GameObject CardBackPrefab;
     public Sprite[] Cards;
 
     public List<string> deck;
@@ -21,15 +22,15 @@ public class Memory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void PlayCards()
     {
 
         deck = GenenrateDeck();
-        Shuffle(deck);
-
+        //Shuffle(deck);
+        hands();
         foreach (string card in deck)
         {
             print(card);
@@ -73,4 +74,22 @@ public class Memory : MonoBehaviour
         }
 
     }
-}
+
+    void hands () {
+        for (int n = 3; n > 1; n--)
+        {
+            foreach (string card in deck)
+            {
+
+
+                GameObject newCard = Instantiate(CardBackPrefab, transform.position, Quaternion.identity);
+                newCard.name = card;
+
+            }
+        }
+
+        }
+
+
+    }
+
